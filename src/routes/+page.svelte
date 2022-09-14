@@ -36,19 +36,20 @@
   .greeting-container {
     position: relative;
     margin: 0 auto;
+    padding: 2rem;
     max-width: 60rem;
     width: 100%;
     font-size: 1.25rem;
-  }
-  .greeting, .name {
-    margin: 0 2rem;
+    background: var(--dark);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
   }
   .name {
     color: var(--lightest);
     font-weight: 500;
   }
   .controls {
-    margin: 0 2rem;
+    margin: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
