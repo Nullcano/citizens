@@ -6,7 +6,7 @@
       <div class="author">
         <div class="avatar"></div>
         <div class="info">
-          <time>June 21, 2022</time>
+          <time>12:34 PM &middot; Jun 21 &middot; 2022</time>
           <div class="handle">
             <div class="location">
               <img src="flags/norway.svg" alt="Norway" />
@@ -47,7 +47,6 @@
   .post .author .info {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
   }
   .post .avatar {
     width: 4rem;
@@ -55,7 +54,12 @@
     border-radius: 50%;
     background-color: var(--dark);
   }
+  .post time {
+    font-size: .8rem;
+    text-transform: uppercase;
+  }
   .post .handle {
+    margin-left: -2.5rem;
     display: flex;
     align-items: center;
     gap: .5rem;

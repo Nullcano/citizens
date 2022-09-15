@@ -21,6 +21,7 @@
     align-items: center;
     justify-content: space-between;
     background: var(--darker);
+    z-index: 100;
   }
   .logo {
     position: relative;
@@ -72,7 +73,8 @@
       width: 100%;
       top: 5rem;
       left: 0;
-      background: var(--darker);
+      background: hsla(240, 7%, 11%, .9);
+      backdrop-filter: blur(2px);
     }
     .search-container input {
       width: calc(100% - 4rem);
