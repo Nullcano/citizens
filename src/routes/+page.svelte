@@ -1,12 +1,18 @@
 <script>
-  import PostOne from "$lib/PostOne.svelte";
-  let names = ['Aiden','Arion','Edard','Patrock','Harryx','Davon','Waelon','Rohn','Brayln','Maddax']
-  const randomItem = (arr) => arr[(Math.random() * arr.length) | 0];
+  import { randomItem, names } from '$lib/utils'
+  import PostOne from '$lib/PostOne.svelte'
+  let userLoggedIn
+  const login = () => userLoggedIn = !userLoggedIn
 </script>
 
 <div class="greeting-container">
+  {#if (!userLoggedIn)}
+  <div class="greeting">Welcome to Citizens.</div>
+  <div class="name"><div class="login-button" on:click="{login}">Become one today</div></div>
+  {:else}
   <div class="greeting">Good morning,</div>
-  <div class="name">{randomItem(names)}</div>
+  <div class="name">{randomItem(names)} {randomItem(names)}</div>
+  {/if}
 </div>
 
 <div class="feed">
@@ -17,6 +23,11 @@
       <div class="button selected">International</div>
     </div>
   </div>
+  {#if (!userLoggedIn)}
+  <div class="guest-view">
+    Please <div class="login-button" on:click="{login}">log in</div> for smart feed
+  </div>
+  {/if}
   <div class="posts-list">
     <PostOne />
     <PostOne />
@@ -76,5 +87,19 @@
   }
   .button.selected {
     background: var(--darker);
+  }
+  .login-button {
+    cursor: pointer;
+  }
+  .guest-view .login-button {
+    display: inline;
+    padding: .25rem .5rem;
+    border-radius: .5rem;
+    border: 1px dashed var(--dark);
+    cursor: pointer;
+    transition: all .2s linear;
+  }
+  .guest-view .login-button:hover {
+    color: var(--lighter);
   }
 </style>

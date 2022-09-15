@@ -1,17 +1,21 @@
+<script>
+  import { randomInteger, randomItem, names } from '$lib/utils';
+</script>
+
 <div class="post">
     <div class="content">
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
     </div>
     <div class="footer">
       <div class="author">
-        <div class="avatar"></div>
+        <div class="avatar" style="background-image:url('avatars/{randomInteger(1, 10)}.png')"></div>
         <div class="info">
           <time>12:34 PM &middot; Jun 21 &middot; 2022</time>
           <div class="handle">
             <div class="location">
               <img src="flags/norway.svg" alt="Norway" />
             </div>
-            <div class="username">User Username</div>
+            <div class="username">{randomItem(names)} {randomItem(names)}</div>
           </div>
         </div>
       </div>
@@ -53,6 +57,8 @@
     height: 4rem;
     border-radius: 50%;
     background-color: var(--dark);
+    background-size: cover;
+    background-position: center;
   }
   .post time {
     font-size: .8rem;
