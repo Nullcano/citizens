@@ -1,5 +1,5 @@
 <script>
-	import '../styles/sweet.css';
+	import '../styles/upmark.css';
 	import '../styles/fonts.css';
 	import '../styles/global.css';
   import AppHeader from '../lib/AppHeader.svelte';
